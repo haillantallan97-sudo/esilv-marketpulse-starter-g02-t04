@@ -15,6 +15,7 @@ Copy this file to `TEAM.md` in your team repository and complete it before start
 | Allan Haillant | @haillantallan97-sudo |
 | Louis-Alexandre Villard | @villardlouisalexandre-dot |
 | Dorian Payet | @github-user-3 |
+| Wijdane Garab | @wijdanegarab |
 
 Add a fourth row only if your team has four members.
 
