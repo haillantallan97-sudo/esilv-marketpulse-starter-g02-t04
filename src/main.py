@@ -25,6 +25,30 @@ def load_prices():
 def filter_prices(prices, ticker):
     return [row for row in prices if row["ticker"] == ticker]
 
+def display_market_summary(asset, prices,
+        show_currency=True):
+    print(f"\n{asset['ticker']} - {asset['name']}")
+    print(f"Observations : {len(prices)}")
+    print(f"first date : {get_first_date(prices)}")
+    print(f"last date : {get_last_date(prices)}")
+    
+    first_close = float(prices[0]["close"])
+    last_close = float(prices[-1]["close"])
+    
+    if show_currency:
+        print(f"First close : {first_close:.2f} {asset['currency']}")
+        print(f"Last close  : {last_close:.2f} {asset['currency']}")
+    else:
+        print(f"First close : {first_close:.2f}")
+        print(f"Last close  : {last_close:.2f}")
+
+def get_first_date(prices):
+    return prices[0]["date"]
+
+
+def get_last_date(prices):
+    return prices[-1]["date"]
+
 
 def main():
     instruments = load_instruments()
@@ -56,6 +80,14 @@ def main():
     print(f"{instrument['ticker']}: {len(instrument_prices)}")
     print(f"{benchmark['ticker']}: {len(benchmark_prices)}")
 
+    print("\nInstrument")
+    display_market_summary(instrument, instrument_prices, show_currency=True)
+    
+    print("\nBenchmark")
+    display_market_summary(benchmark, benchmark_prices, show_currency=False)
 
-if __name__ == "__main__":
+
+if _name_ == "_main_":
     main()
+
+    
