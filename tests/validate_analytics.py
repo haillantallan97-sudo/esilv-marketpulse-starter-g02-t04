@@ -24,4 +24,4 @@ try:
 except ValueError:
     pass
 
-print("OK")
+print("Tous les tests analytics ont reussi.")
