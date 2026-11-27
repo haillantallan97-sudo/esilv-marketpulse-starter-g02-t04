@@ -32,3 +32,19 @@ def fetch_yahoo_prices(symbol, canonical_ticker, period="1mo", interval="1d"):
         })
 
     return rows
+
+
+def fetch_prices_for_ticker(ticker, period="1mo", interval="1d"):
+    """Récupère les prix d'un identifiant MarketPulse (ex. "AAPL", "SP500")
+    en retrouvant automatiquement son symbole Yahoo."""
+    if ticker not in YAHOO_SYMBOL_MAPPING:
+        known = ", ".join(sorted(YAHOO_SYMBOL_MAPPING))
+        raise ValueError(
+            f"Unknown MarketPulse ticker: {ticker!r}. Known tickers: {known}."
+        )
+    return fetch_yahoo_prices(
+        symbol=YAHOO_SYMBOL_MAPPING[ticker],
+        canonical_ticker=ticker,
+        period=period,
+        interval=interval,
+    )
