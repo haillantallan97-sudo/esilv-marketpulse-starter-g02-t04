@@ -12,10 +12,10 @@ Copy this file to `TEAM.md` in your team repository and complete it before start
 
 | Full name | GitHub username |
 |---|---|
-| Allan Haillant | @haillantallan97-sudo |
-| Louis-Alexandre Villard | @villardlouisalexandre-dot |
 | Dorian Payet | @dppersoff-bot|
+| Loui-Alexandre Villard | @villardlouisalexandre-dot |
 | Wijdane Garab | @wijdanegarab |
+| Allan Haillant | @haillantallan97-sudo |
 
 Add a fourth row only if your team has four members.
 
